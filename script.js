@@ -44,3 +44,8 @@ async function animateWord(element, word, letter = 0, growing = true) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
+function chagnePreView(url) {
+    document.querySelector('#box-screen-examples').setAttribute('src', url)
+}

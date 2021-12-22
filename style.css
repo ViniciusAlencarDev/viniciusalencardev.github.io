@@ -7,6 +7,7 @@
 
 :root {
     --color-primary: #85b6ff;
+    --color-primary-rgba: rgba(133, 181, 254, .8);
 }
 
 body {
@@ -88,12 +89,12 @@ body {
 }
 
 .background-left {
-    background: linear-gradient(to left, #85b6ff 40%, transparent);
+    background: linear-gradient(to left, var(--color-primary) 40%, transparent);
     text-align: right;
 }
 
 .background-right {
-    background: linear-gradient(to right, #85b6ff 40%, transparent);
+    background: linear-gradient(to right, var(--color-primary) 40%, transparent);
     text-align: left;
 }
 
@@ -111,7 +112,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: rgba(133, 181, 254, .8);
+    background: var(--color-primary-rgba);
     padding: 10px;
     margin: 10px;
     display: flex;

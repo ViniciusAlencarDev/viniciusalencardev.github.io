@@ -1,39 +1,39 @@
 let descriptionAnimate;
 let counter = 0;
-let duration = 3;
+let duration = 4;
 let durationLetter = 80
 
 window.onload = () => {
 
     descriptionAnimate = document.querySelector('#description-animate')  
-    let words = ['Full Stack', 'ReactJS', 'NodeJS', 'PHP', 'NextJS']
+    let wordsList = ['Full Stack', 'ReactJS', 'NodeJS', 'PHP', 'NextJS']
 
-    animateDescription(descriptionAnimate, words, duration, durationLetter, 'Desenvolvedor ')
+    animateDescription(descriptionAnimate, wordsList, duration, durationLetter, 'Desenvolvedor ')
 }
 
-async function animateDescription(element, words, duration, durationLetter, prefix = '') {
+async function animateDescription(element, wordsList, duration, durationLetter, prefix = '') {
     while(true) {
         let newWord = "";
-        for(i = 0; i < words[counter].length; i++) {
-            newWord += words[counter][i];
+        for(i = 0; i < wordsList[counter].length; i++) {
+            newWord += wordsList[counter][i];
             element.innerHTML = prefix + newWord
             await sleep(durationLetter)
         }
         await sleep(duration * 1000)
         for(i = newWord.length; i >= 0; i--) {
-            newWord = words[counter].slice(0, i);
+            newWord = wordsList[counter].slice(0, i);
             element.innerHTML = prefix + newWord
             await sleep(durationLetter)
         }
-        counter = counter >= words.length - 1 ? 0 : counter + 1
+        counter = counter >= wordsList.length - 1 ? 0 : counter + 1
     }
 }
 
-// async function animateDescription(element, words, duration) {
-//     animateWord(element, words[counter], 0)
+// async function animateDescription(element, wordsList, duration) {
+//     animateWord(element, wordsList[counter], 0)
 //     await sleep(duration * 1000)
-//     counter = counter >= words.length - 1 ? 0 : counter + 1
-//     animateDescription(element, words, duration)
+//     counter = counter >= wordsList.length - 1 ? 0 : counter + 1
+//     animateDescription(element, wordsList, duration)
 // }
 
 // async function animateWord(element, word, letter = 0, growing = true) {

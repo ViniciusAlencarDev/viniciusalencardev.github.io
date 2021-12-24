@@ -7,17 +7,26 @@
 
 :root {
     --color-primary: #85b6ff;
+    /* --color-primary: #3f5fff; */
     --color-primary-rgba: rgba(133, 181, 254, .8);
+    /* --color-primary-rgba: rgb(0 85 210 / 80%); */
+    --color-primary-gradient: #3800ff;
+    --color-secundary-gradient: #8065ff;
+    --color-main-text: black;
+    --color-border: lightblue;
 }
 
 body {
     font-family: Arial;
+    background-color: var(--color-primary);
     background-image: url('https://wallpapersmug.com/large/c42b37/sunset-horizon-clean-sky-nature.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-clip: content-box;
+    
+    /* background-image: linear-gradient(45deg, var(--color-secundary-gradient), var(--color-primary-gradient), var(--color-secundary-gradient)) */
 }
 
 #container {
@@ -80,7 +89,7 @@ body {
     width: 100%;
     height: auto;
     padding: 30px 30px;
-    color: black;
+    color: var(--color-main-text);
     border-radius: 50px;
     line-height: 40px;
     margin-top: 10px;
@@ -98,6 +107,17 @@ body {
 .background-right {
     background: linear-gradient(to right, var(--color-primary) 40%, transparent);
     text-align: left;
+}
+
+.background-left ul li {
+    border-right: 5px solid var(--color-border);
+    padding-right: 10px;
+}
+
+.background-right ul li {
+    border-left: 5px solid var(--color-border);
+    padding-left: 10px;
+    margin: 10px 0;
 }
 
 .box-flex-center {
@@ -124,6 +144,7 @@ body {
     font-size: 20pt;
     text-align: center;
     border: .3vw solid #F5E5D6;
+    color: var(--color-main-text);
 }
 
 .skill_2_4 {
